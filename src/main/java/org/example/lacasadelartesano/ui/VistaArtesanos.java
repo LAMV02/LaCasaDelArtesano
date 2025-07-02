@@ -44,7 +44,7 @@ public class VistaArtesanos extends VBox {
         tarjetaAgregar.setStyle("-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-background-radius: 8;");
         tarjetaAgregar.setOnMouseClicked((MouseEvent e) -> abrirFormularioAgregar());
 
-        Image imagenIcono = new Image(getClass().getResourceAsStream("/img/add_icon.png"));
+        Image imagenIcono = new Image(getClass().getResourceAsStream("/img/add_icon.jpg"));
         ImageView icono = new ImageView(imagenIcono);
         icono.setFitHeight(64);
         icono.setFitWidth(64);

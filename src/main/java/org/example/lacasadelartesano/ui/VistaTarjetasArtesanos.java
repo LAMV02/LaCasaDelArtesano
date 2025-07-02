@@ -46,7 +46,7 @@ public class VistaTarjetasArtesanos extends BorderPane {
         tarjetaAgregar.setStyle("-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-background-radius: 8;");
         tarjetaAgregar.setPrefSize(180, 220);
 
-        ImageView iconoAgregar = new ImageView(new Image(getClass().getResourceAsStream("/img/add_image.jpg")));
+        ImageView iconoAgregar = new ImageView(new Image(getClass().getResourceAsStream("/img/add_icon.jpg")));
         iconoAgregar.setFitWidth(60);
         iconoAgregar.setFitHeight(60);
 

@@ -14,12 +14,11 @@ public class MainWindow extends BorderPane {
         menu.setPrefWidth(220);
         menu.setStyle("-fx-background-color: #f0f4f8;");
 
-        Button btnAgregarArtesano = new Button("Agregar Artesano");
         Button btnAgregarProducto = new Button("Agregar Producto");
         Button btnVerArtesanos = new Button("Ver Artesanos");
         Button btnVerProductos = new Button("Ver Productos");
 
-        for (Button b : new Button[]{btnAgregarArtesano, btnAgregarProducto, btnVerArtesanos, btnVerProductos}) {
+        for (Button b : new Button[]{ btnAgregarProducto, btnVerArtesanos, btnVerProductos}) {
             b.setFont(Font.font(18));
             b.setPrefWidth(Double.MAX_VALUE);
             b.setMinHeight(60);
@@ -28,7 +27,7 @@ public class MainWindow extends BorderPane {
             b.setOnMouseExited(e -> b.setStyle("-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold;"));
         }
 
-        menu.getChildren().addAll(btnAgregarArtesano, btnAgregarProducto, btnVerArtesanos, btnVerProductos);
+        menu.getChildren().addAll(btnAgregarProducto, btnVerArtesanos, btnVerProductos);
 
         this.setLeft(menu);
 
@@ -37,17 +36,12 @@ public class MainWindow extends BorderPane {
         contentArea.setPadding(new Insets(20));
         this.setCenter(contentArea);
 
-        // Eventos
-        btnAgregarArtesano.setOnAction(e -> {
-            FormularioArtesano.mostrar(null, () -> {
-                // Opcional: podrías recargar VistaTarjetasArtesanos si la estás mostrando
-                System.out.println("Formulario cerrado.");
-            });
-        });
+
 
         btnAgregarProducto.setOnAction(e -> {
             contentArea.getChildren().clear();
-            contentArea.getChildren().add(new javafx.scene.control.Label("Formulario para agregar producto"));
+            contentArea.getChildren().add(new VistaProductos());
+
         });
 
         btnVerArtesanos.setOnAction(e -> {
@@ -57,7 +51,8 @@ public class MainWindow extends BorderPane {
 
         btnVerProductos.setOnAction(e -> {
             contentArea.getChildren().clear();
-            contentArea.getChildren().add(new javafx.scene.control.Label("Lista de productos"));
+            contentArea.getChildren().add(new VistaTarjetasProductos());
         });
+
     }
 }

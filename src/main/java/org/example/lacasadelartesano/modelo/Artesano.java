@@ -36,4 +36,9 @@ public class Artesano {
 
     public byte[] getImagen() { return imagen; }
     public void setImagen(byte[] imagen) { this.imagen = imagen; }
+
+    @Override
+    public String toString() {
+        return nombre; // o getNombre() si es privado
+    }
 }

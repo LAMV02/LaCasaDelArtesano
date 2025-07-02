@@ -7,21 +7,23 @@ public class Producto {
     private String descripcion;
     private int stock;
     private double precio;
+    private byte[] imagen;
 
-    public Producto(int id, int idArtesano, String nombre, String descripcion, int stock, double precio) {
+    // Constructor completo (con imagen)
+    public Producto(int id, int idArtesano, String nombre, String descripcion, int stock, double precio, byte[] imagen) {
         this.id = id;
         this.idArtesano = idArtesano;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.stock = stock;
         this.precio = precio;
+        this.imagen = imagen;
     }
 
-    public Producto(int idArtesano, String nombre, String descripcion, int stock, double precio) {
-        this(-1, idArtesano, nombre, descripcion, stock, precio);
+    // Constructor para nuevos productos (sin id)
+    public Producto(int idArtesano, String nombre, String descripcion, int stock, double precio, byte[] imagen) {
+        this(-1, idArtesano, nombre, descripcion, stock, precio, imagen);
     }
-
-
 
     // Getters y Setters
     public int getId() { return id; }
@@ -41,4 +43,7 @@ public class Producto {
 
     public double getPrecio() { return precio; }
     public void setPrecio(double precio) { this.precio = precio; }
+
+    public byte[] getImagen() { return imagen; }
+    public void setImagen(byte[] imagen) { this.imagen = imagen; }
 }

@@ -42,7 +42,7 @@ public class ImagenUtil {
 
     // Cargar imagen por defecto desde recursos o archivo
     public static Image cargarImagenPorDefecto() {
-        try (InputStream is = ImagenUtil.class.getResourceAsStream("/imagenes/default.png")) {
+        try (InputStream is = ImagenUtil.class.getResourceAsStream("/img/default.png")) {
             if (is != null) {
                 return new Image(is);
             } else {
@@ -54,5 +54,20 @@ public class ImagenUtil {
             e.printStackTrace();
             return null;
         }
+
+
+
+
     }
+
+    public static byte[] obtenerBytesImagenPorDefecto() {
+        try (InputStream is = ImagenUtil.class.getResourceAsStream("/img/default.png")) {
+            return is != null ? is.readAllBytes() : new byte[0];
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new byte[0];
+        }
+    }
+
+
 }
